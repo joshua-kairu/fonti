@@ -160,16 +160,12 @@ public class FontItemAdapter extends RecyclerView.Adapter< DisplayFontItemViewHo
 
                         displayFontItems.set( displayFontItemViewHolder.getAdapterPosition(), new DisplayFontItem( selectedFont, displayFontItem.getTitle(), -1 ) );
 
-//                        titleTextView.setTypeface( selectedFont.getTypeface() );
-//                        helloWorldTextView.setTypeface( selectedFont.getTypeface() );
-
                         // 2c4. notify the recycler view of the necessary change
 
                         notifyItemChanged( displayFontItemViewHolder.getAdapterPosition() );
 
-//                        notifyDataSetChanged();
                     } // end onItemSelected
-//
+
                     @Override
                     // stub method onNothingSelected
                     public void onNothingSelected( AdapterView< ? > parent ) { }
@@ -183,61 +179,6 @@ public class FontItemAdapter extends RecyclerView.Adapter< DisplayFontItemViewHo
     @Override
     // getItemCount
     public int getItemCount() { return displayFontItems.size(); }
-
-//    @Override
-//    // begin onBindViewHolder
-//    // this one has a payload
-//    // called by notifyItemChanged
-//    // used when we want to change something specific about an item
-//    public void onBindViewHolder( DisplayFontItemViewHolder displayFontItemViewHolder, int position, List< Object > payloads ) {
-//
-//        // 0. go through all the payloads
-//        // 0a. if the payload is an instance of the DisplayFontItemRecyclerViewPayload
-//        // 0a1. cast the payload to an object of DisplayFontItemRecyclerViewPayload
-//        // 0a2. if we are supposed to change the font
-//        // 0a2a. get the display font item object based on the position
-//        // 0a2b. set the typeface based on the gotten font item
-//
-//        // 0. go through all the payloads
-//
-//        // begin enhanced for through the payloads
-//        for ( Object payload : payloads ) {
-//
-//            // 0a. if the payload is an instance of the DisplayFontItemRecyclerViewPayload
-//
-//            // begin if for if the payload is a kind of DisplayFontItemRecyclerViewPayload
-//            if ( payload instanceof DisplayFontItemRecyclerViewPayload ) {
-//
-//                // 0a1. cast the payload to an object of DisplayFontItemRecyclerViewPayload
-//
-//                DisplayFontItemRecyclerViewPayload recyclerViewPayload = ( DisplayFontItemRecyclerViewPayload ) payload;
-//
-//                // 0a2. if we are supposed to change the font
-//
-//                // begin if for if the payload change type involves changing font
-//                if ( recyclerViewPayload.getChangeType().equals( DisplayFontItemRecyclerViewPayload.CHANGE_FONT ) == true ) {
-//
-//                    // 0a2a. get the display font item object based on the position
-//
-//                    DisplayFontItem displayFontItem = displayFontItems.get( position );
-//
-//                    // 0a2b. set the typeface based on the gotten font item
-//
-//                    TextView
-//
-//                    titleTextView = displayFontItemViewHolder.titleTextView,
-//                    helloWorldTextView = displayFontItemViewHolder.helloWorldTextView;
-//
-//                    titleTextView.setTypeface( displayFontItem.getFont().getTypeface() );
-//                    helloWorldTextView.setTypeface( displayFontItem.getFont().getTypeface() );
-//
-//                } // end if for if the payload change type involves changing font
-//
-//            } // end if for if the payload is a kind of DisplayFontItemRecyclerViewPayload
-//
-//        } // end enhanced for through the payloads
-//
-//    } // end onBindViewHolder
 
     /** Other Methods */
 
