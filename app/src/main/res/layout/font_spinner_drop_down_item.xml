@@ -23,28 +23,25 @@
 
  -->
 
-<!-- LinearLayout to hold the font display items recycler view -->
+<!-- View of how the fonts will look like when their spinner is clicked -->
 
-<LinearLayout
+<TextView
 
     xmlns:android="http://schemas.android.com/apk/res/android"
 
+    android:id="@+id/fsddi_tv_text"
+
+    style="?android:attr/spinnerItemStyle"
+
+    android:singleLine="true"
+
     android:layout_width="match_parent"
 
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
 
-    >
+    android:ellipsize="marquee"
 
-    <!-- ScrollView for the words -->
+    android:textAlignment="inherit"
 
-    <android.support.v7.widget.RecyclerView
+    />
 
-        android:id="@+id/fm_rv_font_items"
-
-        android:layout_width="match_parent"
-
-        android:layout_height="wrap_content"
-
-        />
-
-</LinearLayout>

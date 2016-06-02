@@ -24,9 +24,9 @@ import java.util.List;
 
 /**
 
-    Graphiscaler
+    Fonti
 
-    Tutorial for showcasing typographical scale
+    Simple app to show some fonts in Android
 
     Copyright (C) 2016 Kairu Joshua Wambugu
 
