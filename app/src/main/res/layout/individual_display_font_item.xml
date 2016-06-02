@@ -53,6 +53,8 @@
 
         android:text="Title"
 
+        android:textColor="@color/label"
+
         />
 
     <!-- TextView to show the hello world -->
