@@ -62,9 +62,9 @@ public class MainActivity extends Activity {
         Font localFonts[] =
                 {
                         new Font( "Default", null ), // the default font
-                        new Font( "Courgette Regular", Typeface.createFromAsset( getAssets(), "Courgette-Regular.ttf" ) ) // Courgette Regular
+                        new Font( "Courgette Regular", Typeface.createFromAsset( getAssets(), "Courgette-Regular.ttf" ) ), // Courgette Regular
 //                        new Font( "Fixed Medium Semi Condensed", Typeface.createFromAsset( getAssets(), "Fixed-Medium-Semi-Condensed.pcf.gz" ) ), // Fixed Medium Semi Condensed
-//                        new Font( "Noto Sans Bold", Typeface.createFromAsset( getAssets(), "NotoSans-Bold.ttf" ) ), // Noto Sans Bold
+                        new Font( "Noto Sans Bold", Typeface.createFromAsset( getAssets(), "NotoSans-Bold.ttf" ) ) // Noto Sans Bold
 //                        new Font( "Oxygen Mono Regular", Typeface.createFromAsset( getAssets(), "OxygenMono-Regular.ttf" ) ), // Oxygen Mono Regular
 //                        new Font( "URW Gothic Regular", Typeface.createFromAsset( getAssets(), "URW-Gothic-Regular.pfb" ) ) // URW Gothic Regular
                 };
