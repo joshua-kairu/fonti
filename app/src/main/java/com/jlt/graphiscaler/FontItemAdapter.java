@@ -89,7 +89,7 @@ public class FontItemAdapter extends RecyclerView.Adapter< DisplayFontItemViewHo
 
     @Override
     // begin onBindViewHolder
-    public void onBindViewHolder( final DisplayFontItemViewHolder displayFontItemViewHolder, int position ) {
+    public void onBindViewHolder( final DisplayFontItemViewHolder displayFontItemViewHolder, final int position ) {
 
         // 0. get the display font item object based on the position
         // 1. set the typeface based on the gotten font item
@@ -104,11 +104,11 @@ public class FontItemAdapter extends RecyclerView.Adapter< DisplayFontItemViewHo
 
         // 0. get the display font item object based on the position
 
-        DisplayFontItem displayFontItem = displayFontItems.get( position );
+        final DisplayFontItem displayFontItem = displayFontItems.get( position );
 
         // 1. set the typeface based on the gotten font item
 
-        TextView
+        final TextView
 
         titleTextView = displayFontItemViewHolder.titleTextView,
         helloWorldTextView = displayFontItemViewHolder.helloWorldTextView;
@@ -129,7 +129,6 @@ public class FontItemAdapter extends RecyclerView.Adapter< DisplayFontItemViewHo
 
         // 2b. set the selected font to be the one matching the font of the current font item
 
-        int s = MainActivity.getFontIndex( displayFontItem.getFont() );
         fontsSpinner.setSelection( MainActivity.getFontIndex( displayFontItem.getFont() ) );
 
         // 2c. when a spinner item is selected
@@ -146,7 +145,7 @@ public class FontItemAdapter extends RecyclerView.Adapter< DisplayFontItemViewHo
 
                         // 2c1. set it as the selected item
                         // 2c2. get the font represented by the selected item
-                        // 2c3. create a payload indicating the current recycler item needs to be changed
+                        // 2c3. set the gotten font to be the font of the font item
                         // 2c4. notify the recycler view of the necessary change
 
                         // 2c1. set it as the selected item
@@ -157,16 +156,20 @@ public class FontItemAdapter extends RecyclerView.Adapter< DisplayFontItemViewHo
 
                         Font selectedFont = MainActivity.fonts[ selectedSpinnerItemPosition ];
 
-                        // 2c3. create a payload indicating the current recycler item needs to be changed
+                        // 2c3. set the gotten font to be the font of the font item
 
-                        DisplayFontItemRecyclerViewPayload recyclerViewPayload = new DisplayFontItemRecyclerViewPayload( DisplayFontItemRecyclerViewPayload.CHANGE_FONT, selectedFont );
+                        displayFontItems.set( displayFontItemViewHolder.getAdapterPosition(), new DisplayFontItem( selectedFont, displayFontItem.getTitle(), -1 ) );
+
+//                        titleTextView.setTypeface( selectedFont.getTypeface() );
+//                        helloWorldTextView.setTypeface( selectedFont.getTypeface() );
 
                         // 2c4. notify the recycler view of the necessary change
 
-//                        notifyItemChanged( displayFontItemViewHolder.getAdapterPosition(), recyclerViewPayload );
+                        notifyItemChanged( displayFontItemViewHolder.getAdapterPosition() );
 
+//                        notifyDataSetChanged();
                     } // end onItemSelected
-
+//
                     @Override
                     // stub method onNothingSelected
                     public void onNothingSelected( AdapterView< ? > parent ) { }
