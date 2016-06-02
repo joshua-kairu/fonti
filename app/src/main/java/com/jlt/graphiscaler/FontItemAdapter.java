@@ -83,7 +83,7 @@ public class FontItemAdapter extends RecyclerView.Adapter< DisplayFontItemViewHo
 
         // 3. return a new font item view holder
 
-        return new DisplayFontItemViewHolder( displayFontItemView );
+        return new DisplayFontItemViewHolder( displayFontItemView, activity );
 
     } // end onCreateViewHolder
 
@@ -121,11 +121,7 @@ public class FontItemAdapter extends RecyclerView.Adapter< DisplayFontItemViewHo
 
         final Spinner fontsSpinner = displayFontItemViewHolder.fontsSpinner;
 
-        // 2a. use the font spinner array adapter
-
-        FontsSpinnerArrayAdapter fontsSpinnerArrayAdapter = new FontsSpinnerArrayAdapter( activity );
-
-        fontsSpinner.setAdapter( fontsSpinnerArrayAdapter );
+        // 2a. use the font spinner array adapter -> done in the DisplayFontItemViewHolder constructor
 
         // 2b. set the selected font to be the one matching the font of the current font item
 

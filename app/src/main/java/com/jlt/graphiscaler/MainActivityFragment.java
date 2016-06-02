@@ -73,6 +73,7 @@ public class MainActivityFragment extends Fragment {
         // 2a. make this the recycler view's layout manager
         // 2b. initialize the font items to display
         // 2c. use the font item view holder as the adapter
+        // 2d. this recycler has a fixed size
         // 3. return the inflated view
 
         // 0. inflate using the main fragment layout
@@ -109,6 +110,10 @@ public class MainActivityFragment extends Fragment {
 
         FontItemAdapter fontItemAdapter = new FontItemAdapter( getActivity(), displayFontItems );
         fontItemsRecyclerView.setAdapter( fontItemAdapter );
+
+        // 2d. this recycler has a fixed size
+
+        fontItemsRecyclerView.setHasFixedSize( true );
 
         // 3. return the inflated view
 

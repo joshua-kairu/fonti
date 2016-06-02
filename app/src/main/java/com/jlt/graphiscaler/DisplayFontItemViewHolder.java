@@ -1,5 +1,6 @@
 package com.jlt.graphiscaler;
 
+import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Spinner;
@@ -51,7 +52,7 @@ public class DisplayFontItemViewHolder extends RecyclerView.ViewHolder {
     /** CONSTRUCTOR */
 
     // begin constructor
-    public DisplayFontItemViewHolder( View itemView ) {
+    public DisplayFontItemViewHolder( View itemView, Activity activity ) {
 
         // 0. super things
         // 1. initialize the controls
@@ -63,6 +64,10 @@ public class DisplayFontItemViewHolder extends RecyclerView.ViewHolder {
         // 1. initialize the controls
 
         fontsSpinner = ( Spinner ) itemView.findViewById( R.id.idfi_s_fonts );
+
+        FontsSpinnerArrayAdapter fontsSpinnerArrayAdapter = new FontsSpinnerArrayAdapter( activity );
+
+        fontsSpinner.setAdapter( fontsSpinnerArrayAdapter );
 
         titleTextView = ( TextView ) itemView.findViewById( R.id.idfi_tv_title );
 
